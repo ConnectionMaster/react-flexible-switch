@@ -109,6 +109,7 @@ var Switch = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(Switch.prototype), 'constructor', this).call(this, props);
 
+    this.onActivateButton = this.onActivateButton.bind(this);
     this.onSlideEnd = this.onSlideEnd.bind(this);
     this.onSlideStart = this.onSlideStart.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -203,6 +204,11 @@ var Switch = (function (_React$Component) {
       }
     }
   }, {
+    key: 'onActivateButton',
+    value: function onActivateButton() {
+      this.setState({ active: !this.state.active });
+    }
+  }, {
     key: 'onSlideEnd',
     value: function onSlideEnd() {
       if (this.state.sliding) {
@@ -291,7 +297,14 @@ var Switch = (function (_React$Component) {
           ref: 'switch',
           onMouseLeave: this.onMouseLeave },
         _react2['default'].createElement(_Label2['default'], { active: this.state.active, labels: this.props.labels, ref: 'label' }),
-        _react2['default'].createElement('span', { style: this.circleStyles(), className: 'circle', ref: 'circle' })
+        _react2['default'].createElement('span', { style: this.circleStyles(), className: 'circle', ref: 'circle' }),
+        _react2['default'].createElement('button', {
+          disabled: this.props.locked,
+          onClick: this.onActivateButton,
+          style: hiddenButtonStyles,
+          type: 'button',
+          ref: 'button'
+        })
       );
     }
   }]);
@@ -316,6 +329,18 @@ var defaultCircleStyles = {
   transition: 'transform 200ms, width 200ms, background-color 200ms',
   onColor: '#70D600',
   offColor: '#CFCFCF'
+};
+
+var hiddenButtonStyles = {
+  backgroundColor: 'transparent',
+  borderColor: 'transparent',
+  color: 'transparent',
+  height: '100%',
+  left: 0,
+  pointerEvents: 'none',
+  position: 'absolute',
+  top: 0,
+  width: '100%'
 };
 
 Switch.propTypes = {

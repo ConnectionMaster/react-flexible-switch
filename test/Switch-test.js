@@ -98,6 +98,16 @@ describe('props', () => {
       flip(comp);
       assert(isOff(comp));
     });
+
+    it('disables keyboard control', () => {
+      const comp = renderComponent({ value: false, locked: true });
+      assert(isOff(comp));
+
+      simulateEvent('click', comp.refs.button);
+      assert(isOff(comp));
+
+      assert(comp.refs.button.disabled);
+    });
   });
 
   // TODO: add tests for styles
@@ -159,12 +169,13 @@ describe('mobile devices', () => {
 });
 
 describe('User interaction', () => {
-  let switchComponent, node, circle;
+  let switchComponent, node, circle, button;
 
   beforeEach(() => {
     switchComponent = renderComponent();
     node = switchComponent.refs.switch;
     circle = switchComponent.refs.circle;
+    button = switchComponent.refs.button;
   });
 
 
@@ -189,6 +200,12 @@ describe('User interaction', () => {
 
       assert(isOn(switchComponent));
     });
+
+    it('using the keyboard', () => {
+      simulateEvent('click', button);
+
+      assert(isOn(switchComponent));
+    });
   });
 
   describe('can be turned off', () => {
@@ -208,6 +225,13 @@ describe('User interaction', () => {
 
       simulateEvent('mousedown', node);
       simulateEvent('mouseup', node);
+
+      assert(isOff(switchComponent));
+    });
+
+    it('using the keyboard', () => {
+      simulateEvent('click', button);
+      simulateEvent('click', button);
 
       assert(isOff(switchComponent));
     });
