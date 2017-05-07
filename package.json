@@ -24,16 +24,18 @@
     "gulp": "^3.9.0",
     "jsdom": "^8.4.0",
     "mocha": "^2.4.5",
-    "react": "^0.14.0",
-    "react-addons-test-utils": "^15.0.1",
+    "react": "^15.5",
     "react-component-gulp-tasks": "^0.7.6",
-    "react-dom": "^0.14.0"
+    "react-dom": "^15.5",
+    "prop-types": "^15.5"
   },
   "peerDependencies": {
-    "react": "^0.14.0"
+    "react": "^15.5",
+    "prop-types": "^15.5"
   },
   "browserify-shim": {
-    "react": "global:React"
+    "react": "global:React",
+    "prop-types": "global:PropTypes"
   },
   "scripts": {
     "build": "gulp clean && NODE_ENV=production gulp build",

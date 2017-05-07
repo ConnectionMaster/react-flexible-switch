@@ -20,6 +20,10 @@ var _react = (typeof window !== "undefined" ? window['React'] : typeof global !=
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = (typeof window !== "undefined" ? window['PropTypes'] : typeof global !== "undefined" ? global['PropTypes'] : null);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _utils = require('./utils');
 
 var Label = (function (_React$Component) {
@@ -60,10 +64,10 @@ var Label = (function (_React$Component) {
 exports['default'] = Label;
 
 Label.propTypes = {
-  active: _react2['default'].PropTypes.bool,
-  labels: _react2['default'].PropTypes.shape({
-    on: _react2['default'].PropTypes.string,
-    off: _react2['default'].PropTypes.string
+  active: _propTypes2['default'].bool,
+  labels: _propTypes2['default'].shape({
+    on: _propTypes2['default'].string,
+    off: _propTypes2['default'].string
   })
 };
 module.exports = exports['default'];
@@ -90,6 +94,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = (typeof window !== "undefined" ? window['PropTypes'] : typeof global !== "undefined" ? global['PropTypes'] : null);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _classnames = require('classnames');
 
@@ -344,28 +352,28 @@ var hiddenButtonStyles = {
 };
 
 Switch.propTypes = {
-  active: _react2['default'].PropTypes.bool,
+  active: _propTypes2['default'].bool,
 
-  circleStyles: _react2['default'].PropTypes.shape({
-    onColor: _react2['default'].PropTypes.string,
-    offColor: _react2['default'].PropTypes.string,
-    diameter: _react2['default'].PropTypes.number
+  circleStyles: _propTypes2['default'].shape({
+    onColor: _propTypes2['default'].string,
+    offColor: _propTypes2['default'].string,
+    diameter: _propTypes2['default'].number
   }),
 
-  inactive: _react2['default'].PropTypes.bool,
+  inactive: _propTypes2['default'].bool,
 
-  labels: _react2['default'].PropTypes.shape({
-    on: _react2['default'].PropTypes.string,
-    off: _react2['default'].PropTypes.string
+  labels: _propTypes2['default'].shape({
+    on: _propTypes2['default'].string,
+    off: _propTypes2['default'].string
   }),
 
-  locked: _react2['default'].PropTypes.bool,
+  locked: _propTypes2['default'].bool,
 
-  onActive: _react2['default'].PropTypes.func,
-  onInactive: _react2['default'].PropTypes.func,
+  onActive: _propTypes2['default'].func,
+  onInactive: _propTypes2['default'].func,
 
-  switchStyles: _react2['default'].PropTypes.shape({
-    width: _react2['default'].PropTypes.number
+  switchStyles: _propTypes2['default'].shape({
+    width: _propTypes2['default'].number
   })
 };
 

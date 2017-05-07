@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Label from './Label';
 import { merge, events, disableScroll, reEnableScroll } from './utils';
@@ -233,28 +234,28 @@ const hiddenButtonStyles = {
 };
 
 Switch.propTypes = {
-  active: React.PropTypes.bool,
+  active: PropTypes.bool,
 
-  circleStyles: React.PropTypes.shape({
-    onColor: React.PropTypes.string,
-    offColor: React.PropTypes.string,
-    diameter: React.PropTypes.number
+  circleStyles: PropTypes.shape({
+    onColor: PropTypes.string,
+    offColor: PropTypes.string,
+    diameter: PropTypes.number
   }),
 
-  inactive: React.PropTypes.bool,
+  inactive: PropTypes.bool,
 
-  labels: React.PropTypes.shape({
-    on: React.PropTypes.string,
-    off: React.PropTypes.string
+  labels: PropTypes.shape({
+    on: PropTypes.string,
+    off: PropTypes.string
   }),
 
-  locked: React.PropTypes.bool,
+  locked: PropTypes.bool,
 
-  onActive: React.PropTypes.func,
-  onInactive: React.PropTypes.func,
+  onActive: PropTypes.func,
+  onInactive: PropTypes.func,
 
-  switchStyles: React.PropTypes.shape({
-    width: React.PropTypes.number
+  switchStyles: PropTypes.shape({
+    width: PropTypes.number
   })
 };
 
